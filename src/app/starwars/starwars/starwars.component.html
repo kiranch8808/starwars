@@ -1,0 +1,40 @@
+<div class="background-container">...
+  <div class="color">
+    <div class="container">
+      <div class="centered-content">
+        <h1> Sample Value 3 project using the SWAPI API </h1>
+        <h1> Result are filtered to starships with a crew size less than 10 and sorted by crew size</h1>
+        <h1>The starship that has featured in the most films   </h1>
+           
+      </div>
+    </div>
+    
+  </div>
+
+<div>
+    <ng-container *ngIf="starShipsList.length>0; else templateA">
+       <div *ngFor="let item of starShipsList;let i=index">
+        <div class="card">
+
+          <div class="card-body">
+
+              <div class="border">
+
+              <div class="right">  
+                <h3> Number Of Films : {{item.noOfFilms}}</h3>
+                </div>
+              <h3>{{item.name}}</h3>
+              <h3>{{item.model}}</h3>
+        
+              </div>
+        </div>
+        </div>
+      </div>
+      </ng-container>
+      <ng-template #templateA>
+       <div class="card">
+        <h3 style="color: red;">No Data Found</h3>
+        </div>
+      </ng-template>
+</div>
+</div>
